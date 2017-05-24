@@ -34,6 +34,21 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+
+        var agora = new Date().getTime();
+        var tempo = new Date(agora + 10 * 1000);
+        cordova.plugins.notification.local.schedule({            
+            id: 1,
+            title: "2sd",
+            text: "Contrate serviços profissionais em minutos",
+            at: tempo,
+            icon: './img/icon.png',
+            every: "minute"
+        });
+
+        cordova.plugins.notification.local.on("click", function(notification){
+            alert("clicou na notificação");
+        });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
