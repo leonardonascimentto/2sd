@@ -40,14 +40,15 @@ var app = {
         cordova.plugins.notification.local.schedule({            
             id: 1,
             title: "2sd",
-            text: "Contrate serviços profissionais em minutos",
+            text: "Procurando um servi&ccedil;o profissional?",
             at: tempo,
-            icon: './img/icon.png',
+            icon: '../img/icon.png',
             every: "minute"
         });
 
         cordova.plugins.notification.local.on("click", function(notification){
-            alert("clicou na notificação");
+            //alert("clicou na notificação");
+            window.location="index.html";
         });
     },
     // Update DOM on a Received Event
